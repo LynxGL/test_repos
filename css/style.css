@@ -5,23 +5,40 @@
 }
 
 :root {
+  --dark-color: #1f1c24;
+  --dark__lg-color: #3e3847;
   --app-container: #f3f6fd;
-  --main-color: #1f1c2e;
+  --main-color: var(--dark-color);
   --secondary-color: #4a4a4a;
-  --link-color: #1f1c2e;
+  --link-color: var(--dark-color);
   --link-color-hover: #c3cff4;
   --link-color-active: #fff;
-  --link-color-active-bg: #1f1c2e;
+  --link-color-active-bg: var(--dark-color);
   --projects-section: #fff;
   --message-box-hover: #fafcff;
   --message-box-border: #e9ebf0;
   --more-list-bg: #fff;
   --more-list-bg-hover: #f6fbff;
   --more-list-shadow: rgba(209, 209, 209, 0.4);
-  --button-bg: #1f1c24;
+  --button-bg: var(--dark-color);
   --search-area-bg: #fff;
-  --star: #1ff1c2e;
   --message-btn: #fff;
+  --star: #ffa12d;
+
+  /* dark-mode-color */
+  --body-bd-dark-mode: var(--dark-color);
+  --color-white: #fff;
+}
+
+[dark] {
+  --app-container: var(--dark-color);
+  --main-color: var(--dark-color);
+  --projects-section: var(--dark__lg-color);
+  --secondary-color: var(--color-white);
+  --link-color: var(--color-white);
+  --message-box-hover: transparent;
+  --search-area-bg: var(--dark-color);
+  --button-bg: var(--secondary-color);
 }
 
 html,
@@ -37,6 +54,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: var(--app-container);
+  transition: .6s;
 }
 
 button,
@@ -53,6 +71,8 @@ a {
   transition: 0.2s;
   max-width: 1800px;
 }
+
+
 
 button,
 input,
@@ -77,6 +97,7 @@ textarea {
   padding: 16px 24px;
   position: relative;
 }
+
 .app-header-left,
 .app-header-right {
   display: flex;
@@ -98,6 +119,7 @@ textarea {
   background-color: var(--main-color);
   position: relative;
 }
+
 .app-icon:before,
 .app-icon:after {
   content: "";
@@ -113,12 +135,13 @@ textarea {
 .app-icon:before {
   top: -6px;
 }
+
 .app-icon:after {
   bottom: -6px;
 }
 
 .app-name {
-  color: var(--main-color);
+  color: var(--secondary-color);
   margin: 0;
   font-size: 20px;
   line-height: 24px;
@@ -136,6 +159,10 @@ textarea {
   align-items: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .search-wrapper {
   border-radius: 20px;
   background-color: var(--search-area-bg);
@@ -146,7 +173,7 @@ textarea {
   align-items: center;
   width: 100%;
   max-width: 480px;
-  color: var(--light-font);
+  color: var(--secondary-color);
   box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
     0 24px 20px -24px rgba(71, 82, 107, 0.1);
   overflow: hidden;
@@ -160,15 +187,16 @@ textarea {
   padding: 0 20px;
   font-size: 16px;
   background-color: var(--search-area-bg);
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
+
 .search-input:placeholder {
-  color: var(--main-color);
+  color: var(--secondary-color);
   opacity: 0.6;
 }
 
 .add-btn {
-  color: #fff;
+  color: var(--search-area-bg);
   background-color: var(--button-bg);
   padding: 0;
   border: 0;
@@ -181,7 +209,7 @@ textarea {
 }
 
 .notification-btn {
-  color: var(--main-color);
+  color: var(--secondary-color);
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -200,6 +228,7 @@ textarea {
   padding-left: 12px;
   border-left: 2px solid #ddd;
 }
+
 .profile-btn img {
   width: 32px;
   height: 32px;
@@ -209,7 +238,7 @@ textarea {
 }
 
 .profile-btn span {
-  color: var(--main-color);
+  color: var(--secondary-color);
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
@@ -226,6 +255,7 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
+
 .app-sidebar-link {
   color: var(--main-color);
   color: var(--link-color);
@@ -260,6 +290,7 @@ textarea {
   display: flex;
   flex-direction: column;
 }
+
 .projects-section-line {
   display: flex;
   justify-content: space-between;
@@ -274,13 +305,14 @@ textarea {
   margin-bottom: 24px;
   color: var(--main-color);
 }
+
 .projects-section-header p {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
   opacity: 0.9;
   margin: 0;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 .projects-section-header .time {
@@ -296,6 +328,7 @@ textarea {
   flex-direction: column;
   margin-right: 16px;
 }
+
 .item-status:not(:last-child) .status-type:after {
   content: "";
   position: absolute;
@@ -312,7 +345,7 @@ textarea {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 .status-type {
@@ -336,17 +369,18 @@ textarea {
   border-radius: 4px;
   background-color: transparent;
   border: none;
-  color: var(--main-color);
+  color: var(--secondary-color);
   margin-left: 8px;
   transition: 0.2s;
 }
+
 .view-btn.active {
   background-color: var(--link-color-active-bg);
   color: var(--link-color-active);
 }
 
 .view-btn:not(.active):hover {
-  background-color: var(--link-color-hover);
+  background-color: var(--dark-color);
   color: var(--link-color-active);
 }
 
@@ -384,11 +418,13 @@ textarea {
   align-items: flex-start;
   width: 100%;
 }
+
 .message-box:hover {
   background-color: var(--message-box-hover);
   border-top-color: var(--link-color-hover);
 }
-.message-box:hover + .message-box {
+
+.message-box:hover+.message-box {
   border-top-color: var(--link-color-hover);
 }
 
@@ -405,11 +441,12 @@ textarea {
   justify-content: space-between;
   width: 100%;
 }
+
 .message-header .name {
   font-size: 16px;
   line-height: 24px;
   font-weight: 700;
-  color: var(--main-color);
+  color: var(--secondary-color);
   margin: 0;
 }
 
@@ -432,9 +469,10 @@ textarea {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: var(--star)
 }
 
-input:checked + label svg {
+input:checked+label svg {
   fill: var(--star);
   transition: 0.2s;
 }
@@ -461,6 +499,7 @@ input:checked + label svg {
   display: flex;
   flex-wrap: wrap;
 }
+
 .project-box-wrapper {
   width: 33.3%;
 }
@@ -519,6 +558,7 @@ input:checked + label svg {
   padding: 16px;
   background-color: var(--main-color-card);
 }
+
 .project-box-header {
   display: flex;
   align-items: center;
@@ -531,6 +571,7 @@ input:checked + label svg {
   text-align: center;
   margin-bottom: 16px;
 }
+
 .project-box-content-header p {
   margin: 0;
 }
@@ -573,6 +614,7 @@ input:checked + label svg {
   height: 4px;
   border-radius: 6px;
 }
+
 .box-progress-bar {
   width: 100%;
   height: 4px;
@@ -603,6 +645,7 @@ input:checked + label svg {
   padding-top: 16px;
   position: relative;
 }
+
 .project-box-footer:after {
   content: "";
   position: absolute;
@@ -617,6 +660,7 @@ input:checked + label svg {
   display: flex;
   align-items: center;
 }
+
 .participants img {
   width: 20px;
   height: 20px;
@@ -697,6 +741,7 @@ input:checked + label svg {
 }
 
 @media screen and (max-width: 720px) {
+
   .app-name,
   .profile-btn span {
     display: none;
@@ -708,13 +753,14 @@ input:checked + label svg {
     width: 20px;
     height: 20px;
 
-}
-.add-btn svg,
-.notification-btn svg,
-.mode-switch svg {
-  width: 16px;
-  height: 16px;
-}
+  }
+
+  .add-btn svg,
+  .notification-btn svg,
+  .mode-switch svg {
+    width: 16px;
+    height: 16px;
+  }
 
   .app-header-right button {
     margin-left: 4px;
@@ -725,6 +771,7 @@ input:checked + label svg {
   .projects-section {
     overflow: auto;
   }
+
   .project-boxes {
     overflow-y: visible;
   }
@@ -781,6 +828,7 @@ input:checked + label svg {
   .status-type {
     padding-right: 4px;
   }
+
   .status-type:after {
     display: none;
   }
@@ -803,7 +851,7 @@ input:checked + label svg {
     line-height: 16px;
   }
 
-  .project-boxes.jsListView .project-box-header > span {
+  .project-boxes.jsListView .project-box-header>span {
     font-size: 10px;
   }
 
@@ -821,7 +869,7 @@ input:checked + label svg {
     text-align: center;
   }
 
-  .project-boxes.jsListView .project-box > * {
+  .project-boxes.jsListView .project-box>* {
     margin-right: 10px;
   }
 
