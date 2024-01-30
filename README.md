@@ -1,6 +1,6 @@
 ## Приложение личного кабинета пользователя
 
-![Скрин проекта]([https://github.com/LynxGL/test_repos/demo.PNG](https://github.com/LynxGL/test_repos/blob/main/demo.PNG))
+![Скрин проекта](https://github.com/LynxGL/test_repos/blob/main/demo.PNG)
 
 
 ### Директории
