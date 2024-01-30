@@ -26,14 +26,11 @@
 
 html,
 body {
-  width: 100%;
-  height: 100vh;
   margin: 0;
 }
 
 body {
   font-family: "DM Sans", sans-serif;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   background-color: var(--app-container);
@@ -65,56 +62,30 @@ textarea {
 .app-content {
   display: flex;
   height: 100%;
-  overflow: hidden;
-  padding: 16px 24px 24px 0;
+  padding: 16px 24px 24px 72px;
+  position: relative;
+  gap: 24px;
 }
 
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+
   width: 100%;
-  padding: 16px 24px;
+  padding: 16px 24px 16px 72px;
   position: relative;
 }
 .app-header-left,
 .app-header-right {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .app-header-left {
   flex-grow: 1;
-}
-
-.app-header-right button {
-  margin-left: 10px;
-}
-
-.app-icon {
-  width: 26px;
-  height: 2px;
-  border-radius: 4px;
-  background-color: var(--main-color);
-  position: relative;
-}
-.app-icon:before,
-.app-icon:after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 2px;
-  border-radius: 4px;
-  background-color: var(--main-color);
-  left: 50%;
-  transform: translatex(-50%);
-}
-
-.app-icon:before {
-  top: -6px;
-}
-.app-icon:after {
-  bottom: -6px;
 }
 
 .app-name {
@@ -123,7 +94,6 @@ textarea {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  margin: 0 32px;
 }
 
 .mode-switch {
@@ -221,15 +191,21 @@ textarea {
 }
 
 .app-sidebar {
-  padding: 40px 16px;
+  padding: 82px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: var(--app-container);
 }
 .app-sidebar-link {
   color: var(--main-color);
   color: var(--link-color);
-  margin: 16px 0;
   transition: 0.2s;
   border-radius: 50%;
   flex-shrink: 0;
@@ -251,20 +227,19 @@ textarea {
 }
 
 .projects-section {
-  flex: 2;
   background-color: var(--projects-section);
   border-radius: 32px;
-  padding: 32px 32px 0 32px;
-  overflow: hidden;
+  padding: 32px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 .projects-section-line {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .projects-section-header {
@@ -296,17 +271,6 @@ textarea {
   flex-direction: column;
   margin-right: 16px;
 }
-.item-status:not(:last-child) .status-type:after {
-  content: "";
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translatey(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: 1px solid var(--secondary-color);
-}
 
 .status-number {
   font-size: 24px;
@@ -317,13 +281,13 @@ textarea {
 
 .status-type {
   position: relative;
-  padding-right: 24px;
   color: var(--secondary-color);
 }
 
 .view-actions {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .view-btn {
@@ -337,7 +301,6 @@ textarea {
   background-color: transparent;
   border: none;
   color: var(--main-color);
-  margin-left: 8px;
   transition: 0.2s;
 }
 .view-btn.active {
@@ -351,15 +314,11 @@ textarea {
 }
 
 .messages-section {
-  flex-shrink: 0;
   padding: 32px;
   background-color: var(--projects-section);
-  margin-left: 24px;
-  flex: 1;
-  width: 100%;
   border-radius: 30px;
+  width: 40%;
   position: relative;
-  overflow: auto;
   transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
 }
 
@@ -380,6 +339,7 @@ textarea {
 .message-box {
   border-top: 1px solid var(--message-box-border);
   padding: 16px;
+  padding-left: 0;
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -452,17 +412,10 @@ input:checked + label svg {
   margin-bottom: 0;
 }
 
-.project-boxes {
-  margin: 0 -8px;
-  overflow-y: auto;
-}
-
 .project-boxes.jsGridView {
-  display: flex;
-  flex-wrap: wrap;
-}
-.project-box-wrapper {
-  width: 33.3%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .project-boxes.jsListView .project-box {
@@ -503,7 +456,6 @@ input:checked + label svg {
 
 .project-box-content-header p {
   text-align: left;
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -533,11 +485,6 @@ input:checked + label svg {
 }
 .project-box-content-header p {
   margin: 0;
-}
-
-.project-box-wrapper {
-  padding: 8px;
-  transition: 0.2s;
 }
 
 .project-btn-more {
@@ -577,7 +524,6 @@ input:checked + label svg {
   width: 100%;
   height: 4px;
   border-radius: 6px;
-  overflow: hidden;
   background-color: #fff;
   margin: 8px 0;
 }
@@ -621,7 +567,6 @@ input:checked + label svg {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  overflow: hidden;
   object-fit: cover;
 }
 
@@ -670,163 +615,82 @@ input:checked + label svg {
   display: none;
 }
 
+/* Адаптив  */
+
+@media screen and (max-width: 1200px) {
+  .project-boxes.jsGridView {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 980px) {
-  .project-boxes.jsGridView .project-box-wrapper {
-    width: 50%;
+  .app-content {
+    flex-direction: column;
   }
 
-  .status-number,
-  .status-type {
-    font-size: 14px;
-  }
-
-  .status-type:after {
-    width: 4px;
-    height: 4px;
-  }
-
-  .item-status {
-    margin-right: 0;
+  .projects-section,
+  .messages-section {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 880px) {
-  .messages-btn {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .app-name,
-  .profile-btn span {
-    display: none;
-  }
-
+@media screen and (max-width: 768px) {
+  .search-wrapper,
   .add-btn,
   .notification-btn,
   .mode-switch {
-    width: 20px;
-    height: 20px;
-
-}
-.add-btn svg,
-.notification-btn svg,
-.mode-switch svg {
-  width: 16px;
-  height: 16px;
-}
-
-  .app-header-right button {
-    margin-left: 4px;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .projects-section {
-    overflow: auto;
-  }
-  .project-boxes {
-    overflow-y: visible;
-  }
-
-  .app-sidebar,
-  .app-icon {
     display: none;
   }
-
-  .app-content {
-    padding: 16px 12px 24px 12px;
+  .profile-btn {
+    border: none;
   }
+}
 
-  .status-number,
-  .status-type {
-    font-size: 10px;
+@media screen and (max-width: 600px) {
+  .app-sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
   }
-
-  .view-btn {
-    width: 24px;
-    height: 24px;
+  .app-sidebar-link {
+    margin: 0;
   }
 
   .app-header {
-    padding: 16px 10px;
+    padding: 20px;
   }
-
-  .search-input {
-    max-width: 120px;
+  .app-content {
+    padding-top: 0;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
-  .project-boxes.jsGridView .project-box-wrapper {
+  .projects-section,
+  .messages-section {
+    padding: 20px;
+  }
+  .view-actions {
+    flex-direction: column-reverse;
+  }
+  .projects-section-line {
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .projects-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
     width: 100%;
   }
-
-  .projects-section {
-    padding: 24px 16px 0 16px;
-  }
-
-  .profile-btn img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .app-header {
-    padding: 10px;
-  }
-
-  .projects-section-header p,
-  .projects-section-header .time {
-    font-size: 18px;
-  }
-
-  .status-type {
-    padding-right: 4px;
-  }
-  .status-type:after {
-    display: none;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-
-  .messages-btn {
-    top: 48px;
-  }
-
-  .box-content-header {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .box-content-subheader {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .project-boxes.jsListView .project-box-header > span {
-    font-size: 10px;
-  }
-
-  .box-progress-header {
-    font-size: 12px;
-  }
-
-  .box-progress-percentage {
-    font-size: 10px;
-  }
-
-  .days-left {
-    font-size: 8px;
-    padding: 6px 6px;
-    text-align: center;
-  }
-
-  .project-boxes.jsListView .project-box > * {
-    margin-right: 10px;
-  }
-
-  .project-boxes.jsListView .more-wrapper {
-    right: 2px;
-    top: 10px;
+  .item-status {
+    margin-right: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
   }
 }
