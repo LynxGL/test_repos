@@ -30,7 +30,7 @@
   --color-white: #fff;
 }
 
-[dark] {
+[dark-mode] {
   --app-container: var(--dark-color);
   --main-color: var(--dark-color);
   --projects-section: var(--dark__lg-color);
@@ -668,70 +668,79 @@ input:checked+label svg {
   .app-content {
     flex-direction: column;
   }
-  
-   .projects-section,
-  .messages-section {
-    width: 100%;
-  }
 
-@media screen and (max-width: 768px) {
-  .search-wrapper,
-  .add-btn,
-  .notification-btn,
-  .mode-switch {
-   display: none;
-  }
-  .profile-btn {
-    border: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .app-sidebar {
-    flex-direction: row;
-    justify-content: space-around;
-    top: auto;
-    bottom: 0;
-    right: 0;
-    padding: 20px;
-  }
-  .app-sidebar-link {
-    margin: 0;
-  }
-
-  .app-header {
-    padding: 20px;
-  }
-
-  .app-content {
-    padding-top: 0;
-    padding-bottom: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .projects-section,
   .messages-section {
-    padding: 20px;
-  }
-  .view-actions {
-    flex-direction: column-reverse;
-  }
-  .projects-section-line {
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .projects-status {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
     width: 100%;
   }
-  .item-status {
-    margin-right: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+
+  @media screen and (max-width: 768px) {
+
+    .search-wrapper,
+    .add-btn,
+    .notification-btn,
+    .mode-switch {
+      display: none;
+    }
+
+    .profile-btn {
+      border: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .app-sidebar {
+      flex-direction: row;
+      justify-content: space-around;
+      top: auto;
+      bottom: 0;
+      right: 0;
+      padding: 20px;
+    }
+
+    .app-sidebar-link {
+      margin: 0;
+    }
+
+    .app-header {
+      padding: 20px;
+    }
+
+    .app-content {
+      padding-top: 0;
+      padding-bottom: 80px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .projects-section,
+    .messages-section {
+      padding: 20px;
+    }
+
+    .view-actions {
+      flex-direction: column-reverse;
+    }
+
+    .projects-section-line {
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .projects-status {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .item-status {
+      margin-right: 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
   }
 }
