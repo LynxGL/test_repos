@@ -6,7 +6,7 @@ function getDate() {
     month: 'long'
   };
 
-  let month = date.toLocaleString("ru", options);
+  let month = date.toLocaleString("en", options);
 
   dateBox.innerHTML = month;
   console.log(month);
