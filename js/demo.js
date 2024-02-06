@@ -1,0 +1,32 @@
+export const demoProject = [
+  {
+    id: 1,
+    created: "06.02.2024",
+    title: "Web Designing",
+    category: "Prototyping",
+    progress: 98,
+    teams: [2, 4],
+    startDate: "2024-01-18T08:40:56.597+00:00",
+    endDate: "12.02.2024",
+  },
+  {
+    id: 2,
+    created: "06.02.2024",
+    title: "Testing",
+    category: "Prototyping",
+    progress: 50,
+    teams: [1, 3],
+    startDate: "2024-01-16T08:40:56.597+00:00",
+    endDate: "12.02.2024",
+  },
+  {
+    id: 3,
+    created: "06.02.2024",
+    title: "Svg Animations",
+    category: "Prototyping",
+    progress: 40,
+    teams: [2, 3],
+    startDate: "2024-01-29T08:40:56.597+00:00",
+    endDate: "12.02.2024",
+  },
+];

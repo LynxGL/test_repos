@@ -9,7 +9,6 @@ function getDate() {
   let month = date.toLocaleString("en", options);
 
   dateBox.innerHTML = month;
-  console.log(month);
 }
 
 getDate();
