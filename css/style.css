@@ -454,7 +454,15 @@ input:checked+label svg {
   gap: 10px;
 }
 
-.project-boxes.jsListView .project-box {
+.project-boxes.jsListView {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* .project-boxes.jsListView .project-box {
   display: flex;
   border-radius: 10px;
   position: relative;
@@ -464,7 +472,7 @@ input:checked+label svg {
   position: absolute;
   right: 16px;
   top: 16px;
-}
+} */
 
 .project-boxes.jsListView .project-box-content-header {
   order: 1;
