@@ -52,6 +52,4 @@ document.addEventListener("DOMContentLoaded", function () {
             mode = 'light';
         }
     }
-
 });
-
