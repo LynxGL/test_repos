@@ -289,7 +289,59 @@
     </div>
   </div>
 
+  <div class="modal">
+    <div class="modal__overlay">
+      <div class="modal__wrapper">
+        <div class="modal__header">
+          <h3 class="modal__title">📝 Create Project</h3>
+          <button class="modal__close" title="close project">❌</button>
+        </div>
+        <div class="modal__content">
+          <form class="modal__form">
+            <div class="modal__field">
+              <label class="modal__label">Project name*</label>
+              <input type="text" class="modal__input" placeholder="Website Redesign" required />
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Category*</label>
+              <input type="text" class="modal__input" placeholder="Redesign" required />
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Progress</label>
+              <input type="text" class="modal__input" value="0" disabled />
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Teams</label>
+              <select name="team" class="modal__select">
+                <option value="1">People 1</option>
+                <option value="2">People 2</option>
+                <option value="3">People 3</option>
+                <option value="4">People 4</option>
+              </select>
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Start date</label>
+              <input type="date" class="modal__input" />
+            </div>
+            <div class="modal__field">
+              <label class="modal__label">Date of completion</label>
+              <input type="date" class="modal__input" />
+            </div>
+            <div class="modal__buttons">
+              <button class="modal__button" type="submit" title="create project">
+                Create new project
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
+    <script type="module" src="./js/changeMode.js"></script>
+    <script type="module" src="./js/changeGrid.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script src="./js/currentDate.js"></script>
+    <script src="./js/modals.js"></script>
 
 </body>
 
